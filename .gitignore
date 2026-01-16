@@ -1,0 +1,60 @@
+# =========================
+# NODE / EXPRESS
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+.env
+.env.local
+.env.production
+.env.development
+
+# =========================
+# BUILD FILES
+# =========================
+dist/
+build/
+out/
+
+# =========================
+# FRONTEND (Vite / React)
+# =========================
+.vite/
+coverage/
+
+# =========================
+# DATABASE / UPLOADS
+# =========================
+uploads/
+*.sqlite
+*.db
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / EDITOR
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# LOG FILES
+# =========================
+logs/
+*.log
+
+# =========================
+# MISC
+# =========================
+.cache/
