@@ -172,6 +172,68 @@ export function Testimonials() {
         )}
         
         {/* ... Add Yours Button ... */}
+        <div className="text-center">
+          <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+            <DialogTrigger asChild>
+              <Button className="bg-gold hover:bg-gold/90 text-chocolate font-semibold px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-base">
+                <Plus className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                Add Yours
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Share Your Experience</DialogTitle>
+              </DialogHeader>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="rating">Rating</Label>
+                  <div className="flex gap-1 mt-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, rating: star })}
+                        className="focus:outline-none"
+                      >
+                        <Star
+                          className={`w-6 h-6 ${
+                            star <= formData.rating
+                              ? "fill-gold text-gold"
+                              : "text-gray-300"
+                          }`}
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="content">Review</Label>
+                  <Textarea
+                    id="content"
+                    value={formData.content}
+                    onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                    placeholder="Tell us about your experience..."
+                    rows={4}
+                    required
+                  />
+                </div>
+                <Button type="submit" disabled={submitting} className="w-full bg-gold hover:bg-gold/90 text-chocolate">
+                  {submitting ? "Submitting..." : "Submit Review"}
+                </Button>
+              </form>
+            </DialogContent>
+          </Dialog>
+        </div>
       </div>
     </section>
   );
