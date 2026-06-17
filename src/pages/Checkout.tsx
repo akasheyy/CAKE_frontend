@@ -144,7 +144,7 @@ export default function Checkout() {
                     />
                   </div>
                   <p className="text-sm text-muted-foreground mt-4">
-                    UPI ID: merchant@upi
+                    UPI ID: a89011632@okaxis
                   </p>
                   <p className="text-xs text-muted-foreground">
                     Scan with any UPI app to pay
