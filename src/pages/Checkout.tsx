@@ -39,7 +39,7 @@ export default function Checkout() {
 
   // Generate UPI QR Code URL
   const generateQRCodeUrl = () => {
-    const upiId = 'merchant@upi';
+   const upiId = import.meta.env.VITE_UPI_ID;
     const merchantName = 'FoodHub';
     const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${totalPrice}&cu=INR`;
     return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUrl)}`;
